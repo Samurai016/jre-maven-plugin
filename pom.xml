@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.nrebaioli.jre_maven_plugin</groupId>
+    <groupId>io.github.samurai016.jre_maven_plugin</groupId>
     <artifactId>jre-maven-plugin</artifactId>
     <version>1.0.0</version>
     <packaging>maven-plugin</packaging>
@@ -52,7 +52,6 @@
         <connection>scm:git:git://github.com/Samurai016/jre-maven-plugin.git</connection>
         <developerConnection>scm:git:ssh://github.com/Samurai016/jre-maven-plugin.git</developerConnection>
         <url>https://github.com/Samurai016/jre-maven-plugin</url>
-        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
@@ -143,6 +142,15 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
                     <version>3.21.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>0.7.0</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <publishingServerId>central</publishingServerId>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

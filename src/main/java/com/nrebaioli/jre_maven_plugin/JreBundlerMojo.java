@@ -16,10 +16,10 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package com.nrebaioli.jre_maven_plugin;
+package io.github.samurai016.jre_maven_plugin;
 
-import com.nrebaioli.jre_maven_plugin.adoptium.AdoptiumApi;
-import com.nrebaioli.jre_maven_plugin.adoptium.models.*;
+import io.github.samurai016.jre_maven_plugin.adoptium.AdoptiumApi;
+import io.github.samurai016.jre_maven_plugin.adoptium.models.*;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.model.FileHeader;
 import org.apache.commons.lang3.StringUtils;

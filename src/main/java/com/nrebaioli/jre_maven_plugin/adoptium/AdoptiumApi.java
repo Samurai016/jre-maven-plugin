@@ -16,10 +16,10 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-package com.nrebaioli.jre_maven_plugin.adoptium;
+package io.github.samurai016.jre_maven_plugin.adoptium;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nrebaioli.jre_maven_plugin.adoptium.models.*;
+import io.github.samurai016.jre_maven_plugin.adoptium.models.*;
 import org.apache.hc.client5.http.HttpResponseException;
 import org.apache.hc.core5.net.URIBuilder;
 
