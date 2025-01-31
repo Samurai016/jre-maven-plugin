@@ -7,12 +7,12 @@
     </properties>
 
     <head>
-        <meta http-equiv='refresh' content='0; URL=/README.html' />
+        <meta http-equiv='refresh' content='0; URL=/jre-maven-plugin/README.html' />
     </head>
 
     <body>
-        <h1>Redirecting to <a href="/README.html">Home Page</a></h1>
-        <p>If you are not redirected automatically, follow the <a href="/README.html">link</a>.</p>
+        <h1>Redirecting to <a href="/jre-maven-plugin/README.html">Home Page</a></h1>
+        <p>If you are not redirected automatically, follow the <a href="/jre-maven-plugin/README.html">link</a>.</p>
     </body>
 
 </document>
