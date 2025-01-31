@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin;
+package io.github.samurai016.plugins;
 
-import io.github.samurai016.jre_maven_plugin.adoptium.AdoptiumApi;
-import io.github.samurai016.jre_maven_plugin.adoptium.models.*;
+import io.github.samurai016.plugins.adoptium.AdoptiumApi;
+import io.github.samurai016.plugins.adoptium.models.*;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.model.FileHeader;
 import org.apache.commons.lang3.StringUtils;

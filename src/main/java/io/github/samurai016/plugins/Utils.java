@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin;
+package io.github.samurai016.plugins;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

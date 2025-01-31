@@ -17,24 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin.adoptium.models;
+package io.github.samurai016.plugins.adoptium.models;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * ImageType enum<br>
- * See <code>ImageType</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
+ * JVMImpl enum<br>
+ * See <code>JvmImpl</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
  *
  * @author Nicolò Rebaioli
  */
-public enum ImageType {
-    jdk,
-    jre,
-    testimage,
-    debugimage,
-    staticlibs,
-    sources,
-    sbom;
+public enum JVMImpl {
+    hotspot;
 
     @JsonValue
     public String getJsonValue() {

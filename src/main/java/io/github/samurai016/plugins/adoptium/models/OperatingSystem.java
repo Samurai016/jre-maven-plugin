@@ -17,19 +17,35 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin.adoptium.models;
+package io.github.samurai016.plugins.adoptium.models;
+
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Release model<br>
- * See <code>Release</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
+ * OperatingSystem enum<br>
+ * See <code>OperatingSystem</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
  *
  * @author Nicolò Rebaioli
  */
-@SuppressWarnings("unused")
-public class Release {
-    public Binary binary;
-    public String release_link;
-    public String release_name;
-    public String vendor;
-    public Version version;
+public enum OperatingSystem {
+    linux,
+    windows,
+    mac,
+    solaris,
+    aix,
+    alpine_linux("alpine-linux");
+
+    String jsonValue;
+
+    OperatingSystem() {
+    }
+
+    OperatingSystem(String jsonValue) {
+        this.jsonValue = jsonValue;
+    }
+
+    @JsonValue
+    public String getJsonValue() {
+        return this.jsonValue == null ? this.name().toLowerCase() : this.jsonValue;
+    }
 }

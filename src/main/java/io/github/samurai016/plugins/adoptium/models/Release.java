@@ -17,23 +17,19 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin.adoptium.models;
+package io.github.samurai016.plugins.adoptium.models;
 
 /**
- * Version model<br>
- * See <code>Version</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
+ * Release model<br>
+ * See <code>Release</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
  *
  * @author Nicolò Rebaioli
  */
 @SuppressWarnings("unused")
-public class Version {
-    public int build;
-    public int major;
-    public int minor;
-    public String openjdk_version;
-    public String optional;
-    public int security;
-    public String semver;
-    public int patch;
-    public int adopt_build_numberinteger;
+public class Release {
+    public Binary binary;
+    public String release_link;
+    public String release_name;
+    public String vendor;
+    public Version version;
 }

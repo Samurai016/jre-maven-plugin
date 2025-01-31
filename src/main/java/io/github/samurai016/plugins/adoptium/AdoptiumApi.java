@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin.adoptium;
+package io.github.samurai016.plugins.adoptium;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.samurai016.jre_maven_plugin.adoptium.models.*;
+import io.github.samurai016.plugins.adoptium.models.*;
 import org.apache.hc.client5.http.HttpResponseException;
 import org.apache.hc.core5.net.URIBuilder;
 

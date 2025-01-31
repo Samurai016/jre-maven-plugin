@@ -17,21 +17,22 @@
  * You should have received a copy of the GNU General Public License
  * along with Maven JRE Plugin.  If not, see <http://www.gnu.org/licenses/>.
  */
-package io.github.samurai016.jre_maven_plugin.adoptium.models;
-
-import com.fasterxml.jackson.annotation.JsonValue;
+package io.github.samurai016.plugins.adoptium.models;
 
 /**
- * JVMImpl enum<br>
- * See <code>JvmImpl</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
+ * Installer model<br>
+ * See <code>Installer</code> model at <a href="https://api.adoptium.net/q/swagger-ui/">Adoptium API</a>
  *
  * @author Nicolò Rebaioli
  */
-public enum JVMImpl {
-    hotspot;
-
-    @JsonValue
-    public String getJsonValue() {
-        return this.name().toLowerCase();
-    }
+@SuppressWarnings("unused")
+public class Installer {
+    public String checksum;
+    public String checksum_link;
+    public int download_count;
+    public String link;
+    public String metadata_link;
+    public String name;
+    public String signature_link;
+    public int size;
 }

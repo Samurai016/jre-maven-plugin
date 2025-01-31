@@ -14,7 +14,7 @@ Add the following to your `pom.xml` to use the plugin:
 <build>
     <plugins>
         <plugin>
-            <groupId>io.github.samurai016.jre_maven_plugin</groupId>
+            <groupId>io.github.samurai016.plugins</groupId>
             <artifactId>jre-maven-plugin</artifactId>
             <version>1.0.0</version>
             <executions>
