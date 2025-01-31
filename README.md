@@ -1,6 +1,6 @@
 # JRE Maven Plugin
 [![Latest Version](https://img.shields.io/github/v/release/Samurai016/jre-maven-plugin?style=flat-square&logo=github&label=latest)](https://github.com/Samurai016/jre-maven-plugin/releases/latest)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-%23181717?style=flat-square&logo=github)](https://github.com/Samurai016/jre-maven-plugin/packages/2387673)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-%23181717?style=flat-square&logo=github)](https://github.com/Samurai016/jre-maven-plugin/packages/2387736)
 [![Adoptium API](https://img.shields.io/badge/Adoptium%20API-%2314003c?style=flat-square&logo=eclipseadoptium&logoColor=%23ff1464&labelColor=%2314003c)](https://adoptium.net/)
 
 This Maven plugin allows you to bundle a JRE inside your project.  
