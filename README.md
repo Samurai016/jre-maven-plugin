@@ -1,6 +1,7 @@
 # JRE Maven Plugin
-![Maven Central Version](https://img.shields.io/maven-central/v/io.github.samurai016.jre_maven_plugin/jre-maven-plugin?style=flat-square&logo=apachemaven&label=Maven)
-![Adoptium API](https://img.shields.io/badge/Adoptium%20API-%2314003c?style=flat-square&logo=eclipseadoptium&logoColor=%23ff1464&labelColor=%2314003c)
+[![Latest Version](https://img.shields.io/github/v/release/Samurai016/jre-maven-plugin?style=flat-square&logo=github&label=latest)](https://github.com/Samurai016/jre-maven-plugin/releases/latest)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-%23181717?style=flat-square&logo=github)](https://github.com/Samurai016/jre-maven-plugin/packages/2387673)
+[![Adoptium API](https://img.shields.io/badge/Adoptium%20API-%2314003c?style=flat-square&logo=eclipseadoptium&logoColor=%23ff1464&labelColor=%2314003c)](https://adoptium.net/)
 
 This Maven plugin allows you to bundle a JRE inside your project.  
 It can download the JRE from [Adoptium](https://adoptium.net/) and optionally unzip it to a specified directory.
@@ -112,7 +113,7 @@ mvn clean install
 ```
 
 ## 🛡️ License
-This project is licensed under the [GNU General Public License v3.0](LICENSE.md).
+This project is licensed under the [GNU General Public License v3.0](https://github.com/Samurai016/jre-maven-plugin/LICENSE.md).
 
 ## 🤝 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
