@@ -4,14 +4,162 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.nrebaioli</groupId>
+    <groupId>com.nrebaioli.jre_maven_plugin</groupId>
     <artifactId>jre-maven-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+    <packaging>maven-plugin</packaging>
+
+    <name>Maven JRE Plugin</name>
+    <description>Plugin to bundle JRE within Maven project</description>
+    <url>https://github.com/Samurai016/jre-maven-plugin</url>
+    <inceptionYear>2025</inceptionYear>
+
+    <organization>
+        <name>Nicolò Rebaioli</name>
+        <url>https://github.com/Samurai016/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>nicolo.rebaioli</id>
+            <name>Nicolo' Rebaioli</name>
+            <email>niko.reba@gmail.it</email>
+            <url>https://github.com/Samurai016</url>
+        </developer>
+    </developers>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
+    <licenses>
+        <license>
+            <name>GNU GPL v3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>${project.url}/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git://github.com/Samurai016/jre-maven-plugin.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Samurai016/jre-maven-plugin.git</developerConnection>
+        <url>https://github.com/Samurai016/jre-maven-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencies>
+        <!-- Maven dependencies -->
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>3.9.9</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>3.15.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.9.9</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.18.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents.client5</groupId>
+            <artifactId>httpclient5</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>2.11.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.13.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <!-- Copy the readme file to the site source files so that a page is generated from it. -->
+                            <id>copy-readme</id>
+                            <phase>pre-site</phase>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <configuration>
+                                <outputDirectory>${basedir}/src/site/markdown</outputDirectory>
+                                <resources>
+                                    <resource>
+                                        <directory>${basedir}</directory>
+                                        <includes>
+                                            <include>README.md</include>
+                                        </includes>
+                                    </resource>
+                                </resources>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>3.15.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.21.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-report-plugin</artifactId>
+                <version>3.15.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.8.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

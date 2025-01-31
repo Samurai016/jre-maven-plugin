@@ -3,7 +3,14 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+*.bat
+
+# Copied from root to site source files by maven-resources-plugin
+src/site/markdown/README.md
+
 ### IntelliJ IDEA ###
+**/.idea/workspace.xml
+**/.idea/tasks.xml
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
