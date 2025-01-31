@@ -11,7 +11,7 @@
 
     <name>Maven JRE Plugin</name>
     <description>Plugin to bundle JRE within Maven project</description>
-    <url>https://github.com/Samurai016/jre-maven-plugin</url>
+    <url>https://samurai016.github.io/jre-maven-plugin</url>
     <inceptionYear>2025</inceptionYear>
 
     <organization>
