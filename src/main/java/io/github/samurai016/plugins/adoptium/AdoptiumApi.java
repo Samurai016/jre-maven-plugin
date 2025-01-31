@@ -53,14 +53,20 @@ public class AdoptiumApi {
      * @throws IOException If an error occurs while making the request
      * @throws InterruptedException If the request is interrupted
      */
-    public Release[] getLatestVersion(int featureVersion, JVMImpl jvmImpl, Architecture architecture, ImageType imageType, OperatingSystem os, Vendor vendor) throws URISyntaxException, IOException, InterruptedException {
-        String url = new URIBuilder(BASE_URL)
-                .setPath("/v3/assets/latest/" + featureVersion + "/" + jvmImpl.getJsonValue())
-                .addParameter("architecture", architecture.getJsonValue())
-                .addParameter("image_type", imageType.getJsonValue())
-                .addParameter("os", os.getJsonValue())
-                .addParameter("vendor", vendor.getJsonValue())
-                .toString();
+    public Release[] getLatestVersion(int featureVersion, JVMImpl jvmImpl, Architecture architecture, ImageType imageType, OperatingSystem os, Vendor vendor) throws IOException, InterruptedException {
+        String url;
+        try {
+            url = new URIBuilder(BASE_URL)
+                    .setPath("/v3/assets/latest/" + featureVersion + "/" + jvmImpl.getJsonValue())
+                    .addParameter("architecture", architecture.getJsonValue())
+                    .addParameter("image_type", imageType.getJsonValue())
+                    .addParameter("os", os.getJsonValue())
+                    .addParameter("vendor", vendor.getJsonValue())
+                    .toString();
+        } catch (URISyntaxException e) {
+            // This should never happen
+            throw new RuntimeException(e);
+        }
 
         return get(url, Release[].class);
     }
