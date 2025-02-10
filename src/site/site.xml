@@ -16,7 +16,7 @@
     <body>
         <links>
             <item name="GitHub Repository" href="https://github.com/Samurai016/jre-maven-plugin"/>
-            <item name="GitHub Packages" href="https://github.com/Samurai016/jre-maven-plugin/packages/2387767"/>
+            <item name="Maven Central" href="https://mvnrepository.com/artifact/io.github.samurai016.plugins/jre-maven-plugin"/>
         </links>
         <menu name="JRE Maven Plugin">
             <item name="Introduction" href="README.html" />
