@@ -10,7 +10,7 @@
     <packaging>maven-plugin</packaging>
 
     <name>Maven JRE Plugin</name>
-    <description>Plugin to bundle JRE within Maven project</description>
+    <description>This Maven plugin allows you to bundle a JRE inside your project.</description>
     <url>https://samurai016.github.io/jre-maven-plugin</url>
     <inceptionYear>2025</inceptionYear>
 
@@ -45,7 +45,7 @@
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>${project.url}/issues</url>
+        <url>${scm.url}/issues</url>
     </issueManagement>
 
     <scm>
@@ -75,24 +75,28 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- JSON handling -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.18.2</version>
         </dependency>
 
+        <!-- HTTP Client -->
         <dependency>
             <groupId>org.apache.httpcomponents.client5</groupId>
             <artifactId>httpclient5</artifactId>
             <version>5.4.1</version>
         </dependency>
 
+        <!-- Zip handling -->
         <dependency>
             <groupId>net.lingala.zip4j</groupId>
             <artifactId>zip4j</artifactId>
             <version>2.11.5</version>
         </dependency>
 
+        <!-- Commons -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -107,53 +111,11 @@
 
     <build>
         <plugins>
-            <!-- Maven Resources Plugin: Copy README to site -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-                <executions>
-                    <execution>
-                        <!-- Copy the readme file to the site source files so that a page is generated from it. -->
-                        <id>copy-readme</id>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${basedir}/src/site/markdown</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${basedir}</directory>
-                                    <includes>
-                                        <include>README.md</include>
-                                    </includes>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- Maven Plugin Plugin: Core Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.15.1</version>
-            </plugin>
-            <!-- Maven Site Plugin: Create site -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.21.0</version>
-            </plugin>
-            <!-- Maven SCM Publish Plugin: Publish site to GitHub Pages -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-scm-publish-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <scmBranch>gh-pages</scmBranch>
-                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -246,6 +208,55 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>site</id>
+            <build>
+                <plugins>
+                    <!-- Maven Resources Plugin: Copy README to site -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-resources-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <!-- Copy the readme file to the site source files so that a page is generated from it. -->
+                                <id>copy-readme</id>
+                                <phase>pre-site</phase>
+                                <goals>
+                                    <goal>copy-resources</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${basedir}/src/site/markdown</outputDirectory>
+                                    <resources>
+                                        <resource>
+                                            <directory>${basedir}</directory>
+                                            <includes>
+                                                <include>README.md</include>
+                                            </includes>
+                                        </resource>
+                                    </resources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Maven Site Plugin: Create site -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-site-plugin</artifactId>
+                        <version>3.21.0</version>
+                    </plugin>
+                    <!-- Maven SCM Publish Plugin: Publish site to GitHub Pages -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-scm-publish-plugin</artifactId>
+                        <version>3.3.0</version>
+                        <configuration>
+                            <scmBranch>gh-pages</scmBranch>
                         </configuration>
                     </plugin>
                 </plugins>
