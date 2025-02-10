@@ -45,7 +45,7 @@
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>${scm.url}/issues</url>
+        <url>${project.scm.url}/issues</url>
     </issueManagement>
 
     <scm>
