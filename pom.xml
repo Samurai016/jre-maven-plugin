@@ -48,6 +48,13 @@
         <url>${project.scm.url}/issues</url>
     </issueManagement>
 
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <url>scm:git:git@github.com:Samurai016/jre-maven-plugin.git</url>
+        </site>
+    </distributionManagement>
+
     <scm>
         <connection>scm:git:git://github.com/Samurai016/jre-maven-plugin.git</connection>
         <developerConnection>scm:git:ssh://github.com/Samurai016/jre-maven-plugin.git</developerConnection>
